@@ -4,12 +4,17 @@
     <!-- "data" is used to denote the POJO classes used -->
     <data>
         <!-- "variable" is used to define name which is like a object and the path of the POJO class -->
-        <!-- "name" can be anything, it's like object in Java. -->
+        <!-- "name" should be your class name(case Insensitive). -->
         <!-- "type" contains the path to the POJO class -->
 
         <variable
         name="SimpleInfo"
         type = "com.itcse.databinding_m.POJO.SimpleInfo"/>
+
+        <!-- Declaring SimpleHandlers class which is used for performing action on View click event -->
+        <variable
+            name="simplehandlers"
+            type = "com.itcse.databinding_m.POJO.SimpleHandlers" />
 
     </data>
 
@@ -30,8 +35,9 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{SimpleInfo.simpleInt}" />
+            android:text="@{SimpleInfo.simpleInt}"
+            android:onClick="@{simplehandlers.isAgeEven}"/>
         <!-- Using the "name" as Java Object and accessing it's data members/function -->
-
+        <!-- isAgeEven() will be called automatically on clicking the View -->
     </LinearLayout>
 </layout>
